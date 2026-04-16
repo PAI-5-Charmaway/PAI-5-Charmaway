@@ -202,6 +202,12 @@ jobs:
           allow_issue_writing: false
           cmd_options: "-x report_xml.xml"
 
+      - name: Guardar reporte XML de ZAP para descargar
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-xml-report
+          path: report_xml.xml
+
       - name: Stop Django server
         if: always()
         run: kill $(cat /tmp/django.pid) 2>/dev/null || true
