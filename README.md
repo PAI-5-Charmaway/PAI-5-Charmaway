@@ -128,3 +128,53 @@ Si los secrets no están configurados, los pasos de subida a DefectDojo se omite
 ### CodeRabbit
 
 Las PRs hacia `develop` y `main` reciben revisión automática por CodeRabbit. Requiere instalar la [GitHub App de CodeRabbit](https://github.com/apps/coderabbit-ai) en el repositorio. La configuración está en `.coderabbit.yaml`.
+
+## Sincronización Automática: DefectDojo a GitHub Issues
+
+Hemos configurado un script (`sync_issues.py`) que lee las vulnerabilidades detectadas en nuestro entorno local de DefectDojo y crea automáticamente Issues en este repositorio de GitHub para que el equipo de desarrollo pueda solucionarlas.
+
+### 1. Preparación del entorno
+Antes de ejecutar el script por primera vez, necesitas instalar las librerías de Python encargadas de las peticiones web y la gestión de variables de entorno:
+
+```bash
+pip install requests python-dotenv
+```
+
+### 2. Obtención de Credenciales (API Keys)
+
+Por motivos de seguridad, las contraseñas nunca deben estar escritas directamente en el código. Cada miembro del equipo debe generar sus propios tokens de acceso:
+
+### A. DefectDojo API Key
+1. Inicia sesión en tu instancia local de DefectDojo (`http://localhost:8080`).
+2. Haz clic en el icono de tu perfil (esquina superior derecha).
+3. Selecciona **API v2 Key**.
+4. Copia el token alfanumérico.
+
+### B. GitHub Personal Access Token (Classic)
+1. Ve a tu cuenta de GitHub -> **Settings**.
+2. En el menú lateral izquierdo, ve al final a **Developer settings**.
+3. Selecciona **Personal access tokens** -> **Tokens (classic)**.
+4. Haz clic en **Generate new token (classic)**.
+5. Define un nombre (ej. "DefectDojo-Sync") y selecciona únicamente el permiso `repo`.
+6. Genera el token y cópialo. (*Nota: No podrás volver a verlo una vez cierres la página*).
+
+### 3. Configuración del archivo secreto (`.env`)
+
+Para que el script funcione, debes crear un archivo a partir del archivo `.env.example` llamado exactamente `.env` en la raíz del proyecto. Este archivo servirá para almacenar tus claves locales sin que se suban al repositorio, copielas en sus respectivos lugares.
+
+> [!IMPORTANT]
+> El archivo `.env` ya está incluido en el `.gitignore`. Nunca fuerces su subida al repositorio, ya que expondrías tus claves privadas.
+
+### 4. Ejecución del script
+
+Una vez hayas importado nuevos escaneos a DefectDojo y quieras sincronizarlos con GitHub, simplemente ejecuta el script desde la raíz del proyecto:
+
+```bash
+python sync_issues.py
+```
+
+### ¿Qué hace el script exactamente?
+1. Filtra: Busca vulnerabilidades activas que no sean duplicadas.
+2. Evita spam: Comprueba si la vulnerabilidad ya tiene la etiqueta `enviado-a-github` para no crear Issues repetidas.
+3. Crea: Genera una Issue en GitHub con el título, severidad, descripción y archivo afectado.
+4. Etiqueta: Tras crear la Issue con éxito, añade el tag `enviado-a-github` en DefectDojo mediante un `PATCH` para marcarla como sincronizada.
