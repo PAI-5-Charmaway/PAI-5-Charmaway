@@ -152,8 +152,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'customer.Customer'
 
+# SECURITY SETTINGS (DefectDojo Fixes)
 
+# Evita que JavaScript malicioso pueda leer las cookies de sesión (XSS)
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = True
 
+# Obliga al navegador a respetar el tipo de archivo y evita ataques MIME-Sniffing
+SECURE_CONTENT_TYPE_NOSNIFF = True
 
 #Stripe configuration
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
