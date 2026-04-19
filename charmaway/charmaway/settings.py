@@ -50,7 +50,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'charmaway.middleware.RemoveServerHeaderMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -139,13 +138,12 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-# Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
-# and renames the files with unique names for each version to support long-term caching
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+if not DEBUG:
+    # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-if DEBUG:
-    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-else:
+    # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
+    # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
@@ -155,14 +153,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'customer.Customer'
 
-# SECURITY SETTINGS (DefectDojo Fixes)
 
-# Evita que JavaScript malicioso pueda leer las cookies de sesión (XSS)
-SESSION_COOKIE_HTTPONLY = True
-CSRF_COOKIE_HTTPONLY = True
 
-# Obliga al navegador a respetar el tipo de archivo y evita ataques MIME-Sniffing
-SECURE_CONTENT_TYPE_NOSNIFF = True
 
 #Stripe configuration
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
