@@ -1,0 +1,1151 @@
+<?xml version="1.0"?>
+<OWASPZAPReport programName="ZAP" version="2.17.0" generated="Mon, 27 Apr 2026 09:13:40" created="2026-04-27T09:13:40.111887331Z">
+	
+		<site name="http://localhost:8080" host="localhost" port="8080" ssl="false">
+			<alerts>
+				
+					<alertitem>
+						<pluginid>10038</pluginid>
+						<alertRef>10038-1</alertRef>
+						<alert>Content Security Policy (CSP) Header Not Set</alert>
+						<name>Content Security Policy (CSP) Header Not Set</name>
+						<riskcode>2</riskcode>
+						<confidence>3</confidence>
+						<riskdesc>Medium (High)</riskdesc>
+						<confidencedesc>High</confidencedesc>
+						<desc>&lt;p&gt;Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page &#x2014; covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080</uri>
+									<nodeName>http://localhost:8080</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/login/</uri>
+									<nodeName>http://localhost:8080/customer/login/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/robots.txt</uri>
+									<nodeName>http://localhost:8080/robots.txt</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/services/</uri>
+									<nodeName>http://localhost:8080/services/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+						</instances>
+						<count>4</count>
+						<systemic>true</systemic>
+						<solution>&lt;p&gt;Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.&lt;/p&gt;</solution>
+						<otherinfo></otherinfo>
+						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP&lt;/p&gt;&lt;p&gt;https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html&lt;/p&gt;&lt;p&gt;https://www.w3.org/TR/CSP/&lt;/p&gt;&lt;p&gt;https://w3c.github.io/webappsec-csp/&lt;/p&gt;&lt;p&gt;https://web.dev/articles/csp&lt;/p&gt;&lt;p&gt;https://caniuse.com/#feat=contentsecuritypolicy&lt;/p&gt;&lt;p&gt;https://content-security-policy.com/&lt;/p&gt;</reference>
+						<cweid>693</cweid>
+						<wascid>15</wascid>
+						<sourceid>6</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>90003</pluginid>
+						<alertRef>90003</alertRef>
+						<alert>Sub Resource Integrity Attribute Missing</alert>
+						<name>Sub Resource Integrity Attribute Missing</name>
+						<riskcode>2</riskcode>
+						<confidence>3</confidence>
+						<riskdesc>Medium (High)</riskdesc>
+						<confidencedesc>High</confidencedesc>
+						<desc>&lt;p&gt;The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080</uri>
+									<nodeName>http://localhost:8080</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/about/</uri>
+									<nodeName>http://localhost:8080/about/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/about/</uri>
+									<nodeName>http://localhost:8080/about/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Roboto:wght@400;500&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/login/</uri>
+									<nodeName>http://localhost:8080/customer/login/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/services/</uri>
+									<nodeName>http://localhost:8080/services/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+						</instances>
+						<count>5</count>
+						<systemic>true</systemic>
+						<solution>&lt;p&gt;Provide a valid integrity attribute to the tag.&lt;/p&gt;</solution>
+						<otherinfo></otherinfo>
+						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity&lt;/p&gt;</reference>
+						<cweid>345</cweid>
+						<wascid>15</wascid>
+						<sourceid>1</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10010</pluginid>
+						<alertRef>10010</alertRef>
+						<alert>Cookie No HttpOnly Flag</alert>
+						<name>Cookie No HttpOnly Flag</name>
+						<riskcode>1</riskcode>
+						<confidence>2</confidence>
+						<riskdesc>Low (Medium)</riskdesc>
+						<confidencedesc>Medium</confidencedesc>
+						<desc>&lt;p&gt;A cookie has been set without the HttpOnly flag, which means that the cookie can be accessed by JavaScript. If a malicious script can be run on this page then the cookie will be accessible and can be transmitted to another site. If this is a session cookie then session hijacking may be possible.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080/customer/login/</uri>
+									<nodeName>http://localhost:8080/customer/login/</nodeName>
+									<method>GET</method>
+									<param>csrftoken</param>
+									<attack></attack>
+									<evidence>Set-Cookie: csrftoken</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/</nodeName>
+									<method>GET</method>
+									<param>csrftoken</param>
+									<attack></attack>
+									<evidence>Set-Cookie: csrftoken</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/order/lookup/</uri>
+									<nodeName>http://localhost:8080/order/lookup/</nodeName>
+									<method>GET</method>
+									<param>csrftoken</param>
+									<attack></attack>
+									<evidence>Set-Cookie: csrftoken</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>csrftoken</param>
+									<attack></attack>
+									<evidence>Set-Cookie: csrftoken</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/order/lookup/</uri>
+									<nodeName>http://localhost:8080/order/lookup/ ()(csrfmiddlewaretoken,order_public_id)</nodeName>
+									<method>POST</method>
+									<param>csrftoken</param>
+									<attack></attack>
+									<evidence>Set-Cookie: csrftoken</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+						</instances>
+						<count>5</count>
+						<systemic>true</systemic>
+						<solution>&lt;p&gt;Ensure that the HttpOnly flag is set for all cookies.&lt;/p&gt;</solution>
+						<otherinfo></otherinfo>
+						<reference>&lt;p&gt;https://owasp.org/www-community/HttpOnly&lt;/p&gt;</reference>
+						<cweid>1004</cweid>
+						<wascid>13</wascid>
+						<sourceid>25</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>90004</pluginid>
+						<alertRef>90004-2</alertRef>
+						<alert>Cross-Origin-Embedder-Policy Header Missing or Invalid</alert>
+						<name>Cross-Origin-Embedder-Policy Header Missing or Invalid</name>
+						<riskcode>1</riskcode>
+						<confidence>2</confidence>
+						<riskdesc>Low (Medium)</riskdesc>
+						<confidencedesc>Medium</confidencedesc>
+						<desc>&lt;p&gt;Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don&apos;t explicitly grant the document permission (using CORP or CORS).&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080/</uri>
+									<nodeName>http://localhost:8080/</nodeName>
+									<method>GET</method>
+									<param>Cross-Origin-Embedder-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/about/</uri>
+									<nodeName>http://localhost:8080/about/</nodeName>
+									<method>GET</method>
+									<param>Cross-Origin-Embedder-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/login/</uri>
+									<nodeName>http://localhost:8080/customer/login/</nodeName>
+									<method>GET</method>
+									<param>Cross-Origin-Embedder-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/order/lookup/</uri>
+									<nodeName>http://localhost:8080/order/lookup/</nodeName>
+									<method>GET</method>
+									<param>Cross-Origin-Embedder-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/services/</uri>
+									<nodeName>http://localhost:8080/services/</nodeName>
+									<method>GET</method>
+									<param>Cross-Origin-Embedder-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+						</instances>
+						<count>5</count>
+						<systemic>true</systemic>
+						<solution>&lt;p&gt;Ensure that the application/web server sets the Cross-Origin-Embedder-Policy header appropriately, and that it sets the Cross-Origin-Embedder-Policy header to &apos;require-corp&apos; for documents.&lt;/p&gt;&lt;p&gt;If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Embedder-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).&lt;/p&gt;</solution>
+						<otherinfo></otherinfo>
+						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy&lt;/p&gt;</reference>
+						<cweid>693</cweid>
+						<wascid>14</wascid>
+						<sourceid>33</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>90004</pluginid>
+						<alertRef>90004-1</alertRef>
+						<alert>Cross-Origin-Resource-Policy Header Missing or Invalid</alert>
+						<name>Cross-Origin-Resource-Policy Header Missing or Invalid</name>
+						<riskcode>1</riskcode>
+						<confidence>2</confidence>
+						<riskdesc>Low (Medium)</riskdesc>
+						<confidencedesc>Medium</confidencedesc>
+						<desc>&lt;p&gt;Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080/static/css/base.css</uri>
+									<nodeName>http://localhost:8080/static/css/base.css</nodeName>
+									<method>GET</method>
+									<param>Cross-Origin-Resource-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/static/css/header.css?v=202501231645</uri>
+									<nodeName>http://localhost:8080/static/css/header.css (v)</nodeName>
+									<method>GET</method>
+									<param>Cross-Origin-Resource-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/static/css/home.css?v=202501231730</uri>
+									<nodeName>http://localhost:8080/static/css/home.css (v)</nodeName>
+									<method>GET</method>
+									<param>Cross-Origin-Resource-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/static/css/order.css</uri>
+									<nodeName>http://localhost:8080/static/css/order.css</nodeName>
+									<method>GET</method>
+									<param>Cross-Origin-Resource-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/static/images/favicon.ico</uri>
+									<nodeName>http://localhost:8080/static/images/favicon.ico</nodeName>
+									<method>GET</method>
+									<param>Cross-Origin-Resource-Policy</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+						</instances>
+						<count>5</count>
+						<systemic>true</systemic>
+						<solution>&lt;p&gt;Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to &apos;same-origin&apos; for all web pages.&lt;/p&gt;&lt;p&gt;&apos;same-site&apos; is considered as less secured and should be avoided.&lt;/p&gt;&lt;p&gt;If resources must be shared, set the header to &apos;cross-origin&apos;.&lt;/p&gt;&lt;p&gt;If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).&lt;/p&gt;</solution>
+						<otherinfo></otherinfo>
+						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy&lt;/p&gt;</reference>
+						<cweid>693</cweid>
+						<wascid>14</wascid>
+						<sourceid>22</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10036</pluginid>
+						<alertRef>10036-2</alertRef>
+						<alert>Server Leaks Version Information via &quot;Server&quot; HTTP Response Header Field</alert>
+						<name>Server Leaks Version Information via &quot;Server&quot; HTTP Response Header Field</name>
+						<riskcode>1</riskcode>
+						<confidence>3</confidence>
+						<riskdesc>Low (High)</riskdesc>
+						<confidencedesc>High</confidencedesc>
+						<desc>&lt;p&gt;The web/application server is leaking version information via the &quot;Server&quot; HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080</uri>
+									<nodeName>http://localhost:8080</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>WSGIServer/0.2 CPython/3.12.13</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/robots.txt</uri>
+									<nodeName>http://localhost:8080/robots.txt</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>WSGIServer/0.2 CPython/3.12.13</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/services/</uri>
+									<nodeName>http://localhost:8080/services/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>WSGIServer/0.2 CPython/3.12.13</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/sitemap.xml</uri>
+									<nodeName>http://localhost:8080/sitemap.xml</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>WSGIServer/0.2 CPython/3.12.13</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/static/css/base.css</uri>
+									<nodeName>http://localhost:8080/static/css/base.css</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>WSGIServer/0.2 CPython/3.12.13</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+						</instances>
+						<count>5</count>
+						<systemic>true</systemic>
+						<solution>&lt;p&gt;Ensure that your web server, application server, load balancer, etc. is configured to suppress the &quot;Server&quot; header or provide generic details.&lt;/p&gt;</solution>
+						<otherinfo></otherinfo>
+						<reference>&lt;p&gt;https://httpd.apache.org/docs/current/mod/core.html#servertokens&lt;/p&gt;&lt;p&gt;https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)&lt;/p&gt;&lt;p&gt;https://www.troyhunt.com/shhh-dont-let-your-response-headers/&lt;/p&gt;</reference>
+						<cweid>497</cweid>
+						<wascid>13</wascid>
+						<sourceid>1</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10021</pluginid>
+						<alertRef>10021</alertRef>
+						<alert>X-Content-Type-Options Header Missing</alert>
+						<name>X-Content-Type-Options Header Missing</name>
+						<riskcode>1</riskcode>
+						<confidence>2</confidence>
+						<riskdesc>Low (Medium)</riskdesc>
+						<confidencedesc>Medium</confidencedesc>
+						<desc>&lt;p&gt;The Anti-MIME-Sniffing header X-Content-Type-Options was not set to &apos;nosniff&apos;. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080/static/css/base.css</uri>
+									<nodeName>http://localhost:8080/static/css/base.css</nodeName>
+									<method>GET</method>
+									<param>x-content-type-options</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/static/css/header.css?v=202501231645</uri>
+									<nodeName>http://localhost:8080/static/css/header.css (v)</nodeName>
+									<method>GET</method>
+									<param>x-content-type-options</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/static/css/home.css?v=202501231730</uri>
+									<nodeName>http://localhost:8080/static/css/home.css (v)</nodeName>
+									<method>GET</method>
+									<param>x-content-type-options</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/static/css/order.css</uri>
+									<nodeName>http://localhost:8080/static/css/order.css</nodeName>
+									<method>GET</method>
+									<param>x-content-type-options</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/static/images/favicon.ico</uri>
+									<nodeName>http://localhost:8080/static/images/favicon.ico</nodeName>
+									<method>GET</method>
+									<param>x-content-type-options</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>5</count>
+						<systemic>true</systemic>
+						<solution>&lt;p&gt;Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to &apos;nosniff&apos; for all web pages.&lt;/p&gt;&lt;p&gt;If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.&lt;/p&gt;&lt;p&gt;At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.&lt;/p&gt;</otherinfo>
+						<reference>&lt;p&gt;https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)&lt;/p&gt;&lt;p&gt;https://owasp.org/www-community/Security_Headers&lt;/p&gt;</reference>
+						<cweid>693</cweid>
+						<wascid>15</wascid>
+						<sourceid>22</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10111</pluginid>
+						<alertRef>10111</alertRef>
+						<alert>Authentication Request Identified</alert>
+						<name>Authentication Request Identified</name>
+						<riskcode>0</riskcode>
+						<confidence>3</confidence>
+						<riskdesc>Informational (High)</riskdesc>
+						<confidencedesc>High</confidencedesc>
+						<desc>&lt;p&gt;The given request has been identified as an authentication request. The &apos;Other Info&apos; field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to &quot;Auto-Detect&quot; then this rule will change the authentication to match the request identified.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080/customer/login/</uri>
+									<nodeName>http://localhost:8080/customer/login/ ()(csrfmiddlewaretoken,password,username)</nodeName>
+									<method>POST</method>
+									<param>username</param>
+									<attack></attack>
+									<evidence>password</evidence>
+									<otherinfo>userParam=username
+userValue=foo-bar@example.com
+passwordParam=password
+referer=http://localhost:8080/customer/login/
+csrfToken=csrfmiddlewaretoken</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>1</count>
+						<systemic>false</systemic>
+						<solution>&lt;p&gt;This is an informational alert rather than a vulnerability and so there is nothing to fix.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;userParam=username&lt;/p&gt;&lt;p&gt;userValue=foo-bar@example.com&lt;/p&gt;&lt;p&gt;passwordParam=password&lt;/p&gt;&lt;p&gt;referer=http://localhost:8080/customer/login/&lt;/p&gt;&lt;p&gt;csrfToken=csrfmiddlewaretoken&lt;/p&gt;</otherinfo>
+						<reference>&lt;p&gt;https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/&lt;/p&gt;</reference>
+						<cweid>-1</cweid>
+						<wascid>-1</wascid>
+						<sourceid>58</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10109</pluginid>
+						<alertRef>10109</alertRef>
+						<alert>Modern Web Application</alert>
+						<name>Modern Web Application</name>
+						<riskcode>0</riskcode>
+						<confidence>2</confidence>
+						<riskdesc>Informational (Medium)</riskdesc>
+						<confidencedesc>Medium</confidencedesc>
+						<desc>&lt;p&gt;The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080</uri>
+									<nodeName>http://localhost:8080</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;a class=&quot;action-btn&quot; id=&quot;open-cart&quot; style=&quot;cursor: pointer;&quot;&gt;
+        &lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot;&gt;&lt;path d=&quot;M6 6h15l-1.5 9h-13L4 4H2&quot; stroke=&quot;white&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;/svg&gt;
+        &lt;span class=&quot;cart-bubble&quot;&gt;0&lt;/span&gt;
+      &lt;/a&gt;</evidence>
+									<otherinfo>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/about/</uri>
+									<nodeName>http://localhost:8080/about/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;a class=&quot;action-btn&quot; id=&quot;open-cart&quot; style=&quot;cursor: pointer;&quot;&gt;
+        &lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot;&gt;&lt;path d=&quot;M6 6h15l-1.5 9h-13L4 4H2&quot; stroke=&quot;white&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;/svg&gt;
+        &lt;span class=&quot;cart-bubble&quot;&gt;0&lt;/span&gt;
+      &lt;/a&gt;</evidence>
+									<otherinfo>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/login/</uri>
+									<nodeName>http://localhost:8080/customer/login/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;a class=&quot;action-btn&quot; id=&quot;open-cart&quot; style=&quot;cursor: pointer;&quot;&gt;
+        &lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot;&gt;&lt;path d=&quot;M6 6h15l-1.5 9h-13L4 4H2&quot; stroke=&quot;white&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;/svg&gt;
+        &lt;span class=&quot;cart-bubble&quot;&gt;0&lt;/span&gt;
+      &lt;/a&gt;</evidence>
+									<otherinfo>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/order/lookup/</uri>
+									<nodeName>http://localhost:8080/order/lookup/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;a class=&quot;action-btn&quot; id=&quot;open-cart&quot; style=&quot;cursor: pointer;&quot;&gt;
+        &lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot;&gt;&lt;path d=&quot;M6 6h15l-1.5 9h-13L4 4H2&quot; stroke=&quot;white&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;/svg&gt;
+        &lt;span class=&quot;cart-bubble&quot;&gt;0&lt;/span&gt;
+      &lt;/a&gt;</evidence>
+									<otherinfo>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/services/</uri>
+									<nodeName>http://localhost:8080/services/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>&lt;a class=&quot;action-btn&quot; id=&quot;open-cart&quot; style=&quot;cursor: pointer;&quot;&gt;
+        &lt;svg width=&quot;20&quot; height=&quot;20&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot;&gt;&lt;path d=&quot;M6 6h15l-1.5 9h-13L4 4H2&quot; stroke=&quot;white&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;/svg&gt;
+        &lt;span class=&quot;cart-bubble&quot;&gt;0&lt;/span&gt;
+      &lt;/a&gt;</evidence>
+									<otherinfo>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>5</count>
+						<systemic>true</systemic>
+						<solution>&lt;p&gt;This is an informational alert and so no changes are required.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.&lt;/p&gt;</otherinfo>
+						<reference></reference>
+						<cweid>-1</cweid>
+						<wascid>-1</wascid>
+						<sourceid>1</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10112</pluginid>
+						<alertRef>10112</alertRef>
+						<alert>Session Management Response Identified</alert>
+						<name>Session Management Response Identified</name>
+						<riskcode>0</riskcode>
+						<confidence>2</confidence>
+						<riskdesc>Informational (Medium)</riskdesc>
+						<confidencedesc>Medium</confidencedesc>
+						<desc>&lt;p&gt;The given response has been identified as containing a session management token. The &apos;Other Info&apos; field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to &quot;Auto-Detect&quot; then this rule will change the session management to use the tokens identified.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080/customer/login/</uri>
+									<nodeName>http://localhost:8080/customer/login/</nodeName>
+									<method>GET</method>
+									<param>csrftoken</param>
+									<attack></attack>
+									<evidence>csrftoken</evidence>
+									<otherinfo>cookie:csrftoken</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/</nodeName>
+									<method>GET</method>
+									<param>csrftoken</param>
+									<attack></attack>
+									<evidence>csrftoken</evidence>
+									<otherinfo>cookie:csrftoken</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/order/lookup/</uri>
+									<nodeName>http://localhost:8080/order/lookup/</nodeName>
+									<method>GET</method>
+									<param>csrftoken</param>
+									<attack></attack>
+									<evidence>csrftoken</evidence>
+									<otherinfo>cookie:csrftoken</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>csrftoken</param>
+									<attack></attack>
+									<evidence>csrftoken</evidence>
+									<otherinfo>cookie:csrftoken</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/order/lookup/</uri>
+									<nodeName>http://localhost:8080/order/lookup/ ()(csrfmiddlewaretoken,order_public_id)</nodeName>
+									<method>POST</method>
+									<param>csrftoken</param>
+									<attack></attack>
+									<evidence>csrftoken</evidence>
+									<otherinfo>cookie:csrftoken</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>5</count>
+						<systemic>false</systemic>
+						<solution>&lt;p&gt;This is an informational alert rather than a vulnerability and so there is nothing to fix.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;cookie:csrftoken&lt;/p&gt;</otherinfo>
+						<reference>&lt;p&gt;https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id/&lt;/p&gt;</reference>
+						<cweid>-1</cweid>
+						<wascid>-1</wascid>
+						<sourceid>25</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10049</pluginid>
+						<alertRef>10049-3</alertRef>
+						<alert>Storable and Cacheable Content</alert>
+						<name>Storable and Cacheable Content</name>
+						<riskcode>0</riskcode>
+						<confidence>2</confidence>
+						<riskdesc>Informational (Medium)</riskdesc>
+						<confidencedesc>Medium</confidencedesc>
+						<desc>&lt;p&gt;The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where &quot;shared&quot; caching servers such as &quot;proxy&quot; caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080/about/</uri>
+									<nodeName>http://localhost:8080/about/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/login/</uri>
+									<nodeName>http://localhost:8080/customer/login/</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/robots.txt</uri>
+									<nodeName>http://localhost:8080/robots.txt</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/sitemap.xml</uri>
+									<nodeName>http://localhost:8080/sitemap.xml</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/static/css/base.css</uri>
+									<nodeName>http://localhost:8080/static/css/base.css</nodeName>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>5</count>
+						<systemic>true</systemic>
+						<solution>&lt;p&gt;Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:&lt;/p&gt;&lt;p&gt;Cache-Control: no-cache, no-store, must-revalidate, private&lt;/p&gt;&lt;p&gt;Pragma: no-cache&lt;/p&gt;&lt;p&gt;Expires: 0&lt;/p&gt;&lt;p&gt;This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.&lt;/p&gt;</otherinfo>
+						<reference>&lt;p&gt;https://datatracker.ietf.org/doc/html/rfc7234&lt;/p&gt;&lt;p&gt;https://datatracker.ietf.org/doc/html/rfc7231&lt;/p&gt;&lt;p&gt;https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html&lt;/p&gt;</reference>
+						<cweid>524</cweid>
+						<wascid>13</wascid>
+						<sourceid>28</sourceid>
+					</alertitem>
+				
+				
+					<alertitem>
+						<pluginid>10031</pluginid>
+						<alertRef>10031</alertRef>
+						<alert>User Controllable HTML Element Attribute (Potential XSS)</alert>
+						<name>User Controllable HTML Element Attribute (Potential XSS)</name>
+						<riskcode>0</riskcode>
+						<confidence>1</confidence>
+						<riskdesc>Informational (Low)</riskdesc>
+						<confidencedesc>Low</confidencedesc>
+						<desc>&lt;p&gt;This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.&lt;/p&gt;</desc>
+						<instances>
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>address</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+http://localhost:8080/customer/register/
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+address=688 Zaproxy Ridge
+
+The user-controlled value was:
+688 zaproxy ridge</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>city</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+http://localhost:8080/customer/register/
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+city=East Romaineburgh
+
+The user-controlled value was:
+east romaineburgh</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>email</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+http://localhost:8080/customer/register/
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+email=zaproxy@example.com
+
+The user-controlled value was:
+zaproxy@example.com</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>name</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+http://localhost:8080/customer/register/
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+name=ZAP
+
+The user-controlled value was:
+zap</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>password1</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+http://localhost:8080/customer/register/
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+password1=ZAP
+
+The user-controlled value was:
+zap</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>password2</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+http://localhost:8080/customer/register/
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+password2=ZAP
+
+The user-controlled value was:
+zap</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>phone</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+http://localhost:8080/customer/register/
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+phone=9999999999
+
+The user-controlled value was:
+9999999999</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>surnames</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+http://localhost:8080/customer/register/
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+surnames=ZAP
+
+The user-controlled value was:
+zap</otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://localhost:8080/customer/register/</uri>
+									<nodeName>http://localhost:8080/customer/register/ ()(address,city,csrfmiddlewaretoken,email,name,password1,password2,phone,surnames,zip_code)</nodeName>
+									<method>POST</method>
+									<param>zip_code</param>
+									<attack></attack>
+									<evidence></evidence>
+									<otherinfo>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:
+
+http://localhost:8080/customer/register/
+
+appears to include user input in:
+a(n) [input] tag [value] attribute
+
+The user input found was:
+zip_code=ZAP
+
+The user-controlled value was:
+zap</otherinfo>
+								</instance>
+							
+						</instances>
+						<count>9</count>
+						<systemic>false</systemic>
+						<solution>&lt;p&gt;Validate all input and sanitize output it before writing to any HTML attributes.&lt;/p&gt;</solution>
+						<otherinfo>&lt;p&gt;User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;http://localhost:8080/customer/register/&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;appears to include user input in:&lt;/p&gt;&lt;p&gt;a(n) [input] tag [value] attribute&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;The user input found was:&lt;/p&gt;&lt;p&gt;address=688 Zaproxy Ridge&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;The user-controlled value was:&lt;/p&gt;&lt;p&gt;688 zaproxy ridge&lt;/p&gt;</otherinfo>
+						<reference>&lt;p&gt;https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html&lt;/p&gt;</reference>
+						<cweid>20</cweid>
+						<wascid>20</wascid>
+						<sourceid>63</sourceid>
+					</alertitem>
+				
+			</alerts>
+		</site>
+	
+	
+		<insights>
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>http://localhost:8080</site>
+					<key>insight.code.2xx</key>
+					<description>Percentage of responses with status code 2xx</description>
+					<statistic>88</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>http://localhost:8080</site>
+					<key>insight.code.4xx</key>
+					<description>Percentage of responses with status code 4xx</description>
+					<statistic>11</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>http://localhost:8080</site>
+					<key>insight.endpoint.ctype.image/png</key>
+					<description>Percentage of endpoints with content type image/png</description>
+					<statistic>4</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>http://localhost:8080</site>
+					<key>insight.endpoint.ctype.image/vnd.microsoft.icon</key>
+					<description>Percentage of endpoints with content type image/vnd.microsoft.icon</description>
+					<statistic>4</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>http://localhost:8080</site>
+					<key>insight.endpoint.ctype.text/css</key>
+					<description>Percentage of endpoints with content type text/css</description>
+					<statistic>33</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>http://localhost:8080</site>
+					<key>insight.endpoint.ctype.text/html</key>
+					<description>Percentage of endpoints with content type text/html</description>
+					<statistic>58</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>http://localhost:8080</site>
+					<key>insight.endpoint.method.GET</key>
+					<description>Percentage of endpoints with method GET</description>
+					<statistic>87</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>http://localhost:8080</site>
+					<key>insight.endpoint.method.POST</key>
+					<description>Percentage of endpoints with method POST</description>
+					<statistic>12</statistic>
+				</insight>
+			
+			
+				<insight>
+					<level>Info</level>
+					<reason>Informational</reason>
+					<site>http://localhost:8080</site>
+					<key>insight.endpoint.total</key>
+					<description>Count of total endpoints</description>
+					<statistic>24</statistic>
+				</insight>
+			
+		</insights>
+	
+</OWASPZAPReport>
