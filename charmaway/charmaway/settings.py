@@ -12,13 +12,13 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-import stripe
-import dj_database_url 
-from dotenv import load_dotenv
+# import stripe
+# import dj_database_url 
+# from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+#load_dotenv(os.path.join(BASE_DIR, '.env'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -88,15 +88,15 @@ WSGI_APPLICATION = 'charmaway.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://charmaway_user:charmaway_password@localhost:5432/charmaway',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
-DATABASES['default']['TEST'] = {
-    'NAME': 'charmaway_test'
-}
+#DATABASES['default']['TEST'] = {
+#     'NAME': 'charmaway_test'
+# }
 
 
 # Password validation
@@ -161,7 +161,7 @@ STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_WEBHOOK_SECRET = os.environ.get('STRIPE_WEBHOOK_SECRET')
 
-stripe.api_key = STRIPE_SECRET_KEY
+#stripe.api_key = STRIPE_SECRET_KEY
 
 EMAIL_BACKEND = "charmaway.utils.email_backend.SSLContextEmailBackend"
 EMAIL_HOST = "in-v3.mailjet.com"
