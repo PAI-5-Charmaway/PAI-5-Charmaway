@@ -1,14 +1,16 @@
 from django.core.management.base import BaseCommand
 from customer.models import Customer
+import os
 
 class Command(BaseCommand):
     help = 'Crea un admin y un usuario normal de prueba'
 
     def handle(self, *args, **options):
+        # Crear superusuario si no existe
         if not Customer.objects.filter(email='admin@example.com').exists():
             Customer.objects.create_superuser(
                 email='admin@example.com',
-                password='SecurePassword',
+                password=os.getenv('DEFAULT_ADMIN_PASSWORD'),
                 name='Wade',
                 surnames='Wilson',
                 phone='+34123456789',
@@ -18,10 +20,11 @@ class Command(BaseCommand):
             )
             self.stdout.write(self.style.SUCCESS('Admin creado correctamente'))
 
+        # Crear usuario normal si no existe
         if not Customer.objects.filter(email='user@example.com').exists():
             Customer.objects.create_user(
                 email='user@example.com',
-                password='SecurePassword',
+                password=os.getenv('DEFAULT_USER_PASSWORD'),
                 name='Peter',
                 surnames='Parker',
                 phone='+34111222333',
@@ -31,10 +34,11 @@ class Command(BaseCommand):
             )
             self.stdout.write(self.style.SUCCESS('Usuario normal creado correctamente'))
 
+        # Crear customers de prueba si no existen
         if not Customer.objects.filter(email='customer1@example.com').exists():
             Customer.objects.create_user(
                 email='customer1@example.com',
-                password='CustomerPassword',
+                password=os.getenv('DEFAULT_USER_PASSWORD'),
                 name='Customer',
                 surnames='Uno',
                 phone='+34666000001',
@@ -47,7 +51,7 @@ class Command(BaseCommand):
         if not Customer.objects.filter(email='customer2@example.com').exists():
             Customer.objects.create_user(
                 email='customer2@example.com',
-                password='CustomerPassword',
+                password=os.getenv('DEFAULT_USER_PASSWORD'),
                 name='Customer',
                 surnames='Dos',
                 phone='+34666000002',
@@ -60,7 +64,7 @@ class Command(BaseCommand):
         if not Customer.objects.filter(email='customer3@example.com').exists():
             Customer.objects.create_user(
                 email='customer3@example.com',
-                password='CustomerPassword',
+                password=os.getenv('DEFAULT_USER_PASSWORD'),
                 name='Customer',
                 surnames='Tres',
                 phone='+34666000003',
@@ -73,7 +77,7 @@ class Command(BaseCommand):
         if not Customer.objects.filter(email='customer4@example.com').exists():
             Customer.objects.create_user(
                 email='customer4@example.com',
-                password='CustomerPassword',
+                password=os.getenv('DEFAULT_USER_PASSWORD'),
                 name='Customer',
                 surnames='Cuatro',
                 phone='+34666000004',
@@ -86,7 +90,7 @@ class Command(BaseCommand):
         if not Customer.objects.filter(email='customer5@example.com').exists():
             Customer.objects.create_user(
                 email='customer5@example.com',
-                password='CustomerPassword',
+                password=os.getenv('DEFAULT_USER_PASSWORD'),
                 name='Customer',
                 surnames='Cinco',
                 phone='+34666000005',
